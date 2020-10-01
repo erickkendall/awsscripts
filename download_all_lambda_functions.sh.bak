@@ -1,0 +1,9 @@
+downloaded_code () {
+  aws lambda get-function --function-name $OPUTPUT | head -n 1 | cut -f 2 | xargs wget -O ./lambda_fuctions/$OUTPUT.zip
+}
+
+mkdir lambda_fucntions
+for run in $(aws lambda list-fuctions | cut -f 6 | xargs);
+doth
+  dowload_code $run" &
+done
