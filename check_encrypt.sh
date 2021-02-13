@@ -17,7 +17,12 @@ do
 
 	for i in `aws s3 ls --profile $profile | awk '{ print $3 }'`
 		do
-			aws s3api get-bucket-encryption --bucket $i --profile $profile
+		#	aws s3api get-bucket-encryption --bucket $i --profile $profile
+			encrypt = `aws s3api get-bucket-encryption --bucket $i --profile $profile --query ServerSideEncryptionConfiguration.Rules\[*\].ApplyServerSideEncryptionByDefault --output text`
+			if [ $encrypt = "AES256" ]
+                        then
+                          echo "$i is encrypted"
+			fi
 	done
 done
 
