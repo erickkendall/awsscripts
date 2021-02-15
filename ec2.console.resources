@@ -1,0 +1,40 @@
+carrier-gateway					# aws ec2 describe-carrier-gateways --profile famc-legacy --region us-east-1 --output text
+client-vpn-endpoint				# aws ec2 describe-client-vpn-endpoints --profile famc-legacy --region us-east-1 --output text
+customer-gateway				# aws ec2 describe-customer-gateways --query  CustomerGateways[].CustomerGatewayId --profile famc-legacy --region us-east-1 --output text
+dhcp-options					# aws ec2 describe-dhcp-options --query 'DhcpOptions[].Tags[?Key==`Name`].Value'  --profile famc-legacy --region us-east-1
+egress-only-internet-gateway 			# aws ec2 describe-egress-only-internet-gateways --profile famc-legacy --region us-east-1
+fleet						# aws ec2 describe-fleets --profile famc-legacy --region us-east-1
+fpga-image					# aws ec2 describe-fpga-images --filters Name=owner-id,Values=858737304353 --profile famc-legacy --region us-east-1
+image						# aws ec2 describe-images --filters Name=owner-id,Values=858737304353 --query Images[].ImageId  --profile famc-legacy --region us-east-1
+key-pair					# aws ec2 describe-key-pairs --query KeyPairs[].KeyName --profile famc-legacy --region us-east-1 --output text
+launch-template					# aws ec2 describe-launch-templates --profile famc-legacy --region us-east-1
+local-gateway-route-table			# aws ec2 describe-local-gateway-route-tables --profile famc-legacy --region us-east-1
+local-gateway-route-table-vpc-association	# aws ec2 describe-local-gateway-route-table-vpc-associations --profile famc-legacy --region us-east-1
+natgateway					# aws ec2 describe-nat-gateways --query 'NatGateways[].Tags[?Key==`Name`].Value' --profile legacy --region us-east-1 --output text
+network-acl					# aws ec2 describe-network-acls --query NetworkAcls[].Associations[].NetworkAclAssociationId --profile famc-legacy --region us-east-1 --output text:
+network-insights-analysis
+network-insights-path
+network-interface
+prefix-list
+reserved-instances
+route-table
+security-group
+snapshot
+subnet
+traffic-mirror-filter
+traffic-mirror-filter-rule
+traffic-mirror-session
+traffic-mirror-target
+transit-gateway
+transit-gateway-attachment
+transit-gateway-connect-peer
+transit-gateway-multicast-domain
+transit-gateway-route-table
+volume						# aws ec2 describe-volumes --filters Name=status,Values=available --query Volumes[].VolumeId --profile famc-legacy --region us-east-1 --output text
+vpc						# aws ec2 describe-vpcs --query 'Vpcs[].Tags[?Key==`Name`].Value' --profile legacy --region us-east-1 --output text
+vpc-endpoint					# aws ec2 describe-vpc-endpoints --query VpcEndpoints[].VpcEndpointId --profile famc-legacy --region us-east-1 --output text
+vpc-endpoint-service				# aws ec2 describe-vpc-endpoint-services --query ServiceDetails[].ServiceName --profile famc-legacy --region us-east-1
+vpc-flow-log					# aws ec2 describe-flow-logs --query FlowLogs[].FlowLogId --profile famc-legacy --region us-east-1 --output text
+vpc-peering-connection
+vpn-connection					# aws ec2 describe-vpn-connections --query VpnConnections[].CustomerGatewayId --profile famc-legacy --region us-east-1 --output text
+vpn-gateway					# aws ec2 describe-vpn-gateways --query VpnGateways[].VpnGatewayId  --profile famc-legacy --region us-east-1 --output text

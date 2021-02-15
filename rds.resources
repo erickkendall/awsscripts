@@ -1,0 +1,15 @@
+target-groups
+snapshots
+clusters
+secgrps
+cluster-snapshots
+cluster-pgs
+ris
+subgrps
+db-proxys
+global-clusters
+ess
+dbs
+pgs
+cluster-endpoints
+ogs
